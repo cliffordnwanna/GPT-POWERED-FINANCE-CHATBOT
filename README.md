@@ -36,19 +36,6 @@ You must ensure:
 You should:
 - Use clear and inclusive language
 - Recommend consulting human professionals for major decisions
-```
-
----
-
-## 📸 Screenshots
-
-> Replace these with your screenshots later
-
-![screenshot-deployment](screenshots/deployment.png)  
-*Azure OpenAI deployment panel*
-
-![screenshot-chat](screenshots/chat-ui.png)  
-*Finance Chatbot running in Colab / Jupyter*
 
 ---
 
