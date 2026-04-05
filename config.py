@@ -52,7 +52,7 @@ AZURE_OPENAI_API_VERSION: str = _get("AZURE_OPENAI_API_VERSION", "2024-02-01")
 MAX_HISTORY_TURNS: int = int(_get("MAX_HISTORY_TURNS", "5"))
 MAX_TOKENS: int = int(_get("MAX_TOKENS", "500"))
 MAX_INPUT_LENGTH: int = int(_get("MAX_INPUT_LENGTH", "500"))
-MAX_REQUESTS_PER_SESSION: int = int(_get("MAX_REQUESTS_PER_SESSION", "20"))
+MAX_REQUESTS_PER_SESSION: int = int(_get("MAX_REQUESTS_PER_SESSION", "5"))
 
 # ---------------------------------------------------------------------------
 # Logging
