@@ -1,13 +1,10 @@
-﻿---
-title: Finance Intelligence System
-emoji: ðŸ“Š
+﻿title: Finance Intelligence System
+emoji: "📊"
 colorFrom: blue
 colorTo: green
 sdk: streamlit
-sdk_version: 1.35.0
 app_file: app.py
 pinned: true
----
 
 # Finance Intelligence System
 
