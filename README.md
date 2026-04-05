@@ -220,3 +220,26 @@ Aggregated category totals answer the question users actually have: *"Where is m
 ## License
 
 MIT License â€” free to use, modify, and distribute with attribution.
+
+---
+
+## From Notebook to Production: The Origin Story
+
+This project began as a humble Jupyter notebook—a simple, interactive prototype designed to answer personal finance questions using GPT. The earliest version (see `finance_chatbot.ipynb`) was a hands-on experiment: could an LLM, guided by a strong system prompt and responsible AI guardrails, provide safe, actionable financial guidance?
+
+**The notebook was the spark.** It featured:
+- Secure credential handling (never hardcoded keys)
+- A provider-agnostic OpenAI client
+- A robust system prompt enforcing fairness, privacy, and disclaimers
+- Stateful, multi-turn chat with graceful error handling
+- Clean, interactive widgets for user input and output
+
+As the prototype grew, so did the vision. The notebook’s conversational pattern, error handling, and focus on user experience became the backbone of a full-stack, production-grade app. Every lesson learned—about validation, explainability, and responsible AI—was carried forward.
+
+**The result:**
+- A deterministic statistical pipeline (for explainable, auditable analysis)
+- A robust Streamlit UI inspired by the notebook’s clarity and interactivity
+- A strict separation between analysis and narration (LLM never invents numbers)
+- Full responsible AI governance, logging, and observability
+
+> *This journey—from a glowing notebook demo to a portfolio-ready, production system—proves that great products start with curiosity, iteration, and a relentless focus on user trust.*
