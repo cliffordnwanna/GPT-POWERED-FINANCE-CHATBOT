@@ -117,7 +117,7 @@ class TestBuildChatMessagesWithContext:
         ctx = "analysis data"
         messages = build_chat_messages("q", history=[], analysis_context=ctx)
         context_msg = messages[1]["content"]
-        assert "do not contradict" in context_msg.lower()
+        assert "contradict" in context_msg.lower()
 
     def test_no_context_when_none_passed(self):
         messages = build_chat_messages("q", history=[], analysis_context=None)

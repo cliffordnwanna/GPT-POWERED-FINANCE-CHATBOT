@@ -79,7 +79,7 @@ The Finance Intelligence System is a two-layer architecture where a **determinis
 │  FinanceChatbot                                                    │
 │      ├── _history: List[Dict]  (full in-memory history)           │
 │      ├── _get_windowed_history()                                   │
-│      │       MAX_HISTORY_TURNS × 2 messages (default 10 turns)    │
+│      │       MAX_HISTORY_TURNS × 2 messages (default 5 turns)     │
 │      │       Oldest turns dropped first                            │
 │      │                                                             │
 │      ├── _call_api(messages)                                       │
@@ -226,7 +226,7 @@ All settings in `.env` (see `.env.example`):
 | `OPENAI_API_KEY` | (required) | OpenAI API key |
 | `MODEL_NAME` | `gpt-4o-mini` | Model identifier |
 | `USE_AZURE` | `false` | Switch to Azure OpenAI |
-| `MAX_HISTORY_TURNS` | `10` | Sliding window size |
+| `MAX_HISTORY_TURNS` | `5` | Sliding window size |
 | `MAX_TOKENS` | `500` | Max LLM response tokens |
 | `MAX_INPUT_LENGTH` | `500` | Max user input characters |
 | `MAX_REQUESTS_PER_SESSION` | `20` | Session rate cap |

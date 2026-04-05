@@ -21,6 +21,7 @@ load_dotenv(override=True)
 # Falls back to os.getenv transparently so local dev is unchanged.
 # ---------------------------------------------------------------------------
 
+
 def _get(key: str, default: str = "") -> str:
     """Return value from st.secrets (Streamlit Cloud) or os.environ."""
     try:
@@ -28,6 +29,7 @@ def _get(key: str, default: str = "") -> str:
         return st.secrets.get(key, os.getenv(key, default))
     except Exception:
         return os.getenv(key, default)
+
 
 # ---------------------------------------------------------------------------
 # OpenAI (standard API)
@@ -47,7 +49,7 @@ AZURE_OPENAI_API_VERSION: str = _get("AZURE_OPENAI_API_VERSION", "2024-02-01")
 # ---------------------------------------------------------------------------
 # Application settings
 # ---------------------------------------------------------------------------
-MAX_HISTORY_TURNS: int = int(_get("MAX_HISTORY_TURNS", "10"))
+MAX_HISTORY_TURNS: int = int(_get("MAX_HISTORY_TURNS", "5"))
 MAX_TOKENS: int = int(_get("MAX_TOKENS", "500"))
 MAX_INPUT_LENGTH: int = int(_get("MAX_INPUT_LENGTH", "500"))
 MAX_REQUESTS_PER_SESSION: int = int(_get("MAX_REQUESTS_PER_SESSION", "20"))

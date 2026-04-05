@@ -44,8 +44,6 @@ from analysis import (
     get_top_transactions,
     load_transactions,
     segment_user,
-    run_full_analysis,
-    validate_schema,
 )
 from chatbot import FinanceChatbot
 from explainer import build_insight, format_for_prompt
@@ -168,6 +166,7 @@ st.markdown(
 # ---------------------------------------------------------------------------
 # Sidebar — System Status Panel
 # ---------------------------------------------------------------------------
+
 
 def _render_sidebar() -> None:
     st.sidebar.title("Control Panel")
@@ -669,7 +668,6 @@ def _render_analyser_tab() -> None:
 def _get_personalized_suggestions(insight: dict) -> list:
     """Return 3 questions tailored to the user's actual spending data."""
     top_cat = insight.get("top_category", "your highest category").lower()
-    segment = insight.get("segment", "moderate").lower()
     return [
         f"Why is my {top_cat} spending so high and what can I do about it?",
         "Am I on track financially or am I spending too much overall?",
@@ -829,7 +827,6 @@ def _render_assistant_tab() -> None:
 
     limit_remaining = config.MAX_REQUESTS_PER_SESSION - st.session_state.request_count
     st.caption(f"Questions remaining: {limit_remaining}")
-
 
 
 # ---------------------------------------------------------------------------

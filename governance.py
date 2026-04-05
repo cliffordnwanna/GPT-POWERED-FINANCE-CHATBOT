@@ -55,6 +55,7 @@ _CONTENT_FILTER_RESPONSE = (
 # Governance functions
 # ---------------------------------------------------------------------------
 
+
 def apply_governance(
     response_text: str,
     finish_reason: str,

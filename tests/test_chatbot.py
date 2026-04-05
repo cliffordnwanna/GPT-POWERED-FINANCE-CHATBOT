@@ -15,7 +15,6 @@ Tests cover:
 
 import os
 import sys
-import time
 import pytest
 from unittest.mock import MagicMock, patch
 

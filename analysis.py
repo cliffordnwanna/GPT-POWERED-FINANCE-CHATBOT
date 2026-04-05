@@ -326,8 +326,6 @@ def run_full_analysis(filepath: str) -> Dict:
 # ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
-    import json
-
     print("Running analysis on sample dataset...\n")
     results = run_full_analysis(SAMPLE_DATA_PATH)
 
@@ -345,7 +343,7 @@ if __name__ == "__main__":
 
     print("Top transactions:")
     for t in results["top_transactions"]:
-        print(f"  {t['date']} | {t['category']:<15} | ${t['amount']:>8.2f} | {t.get('description','')}")
+        print(f"  {t['date']} | {t['category']:<15} | ${t['amount']:>8.2f} | {t.get('description', '')}")
     print()
 
     seg = results["segmentation"]

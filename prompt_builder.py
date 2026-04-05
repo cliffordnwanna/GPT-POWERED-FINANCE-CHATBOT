@@ -19,7 +19,7 @@ Public interface:
 """
 
 import logging
-from typing import Dict, Any, List, Optional
+from typing import Dict, List, Optional
 
 logger = logging.getLogger(__name__)
 
@@ -28,7 +28,7 @@ logger = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------
 
 SYSTEM_PROMPT_VERSION = "1.1.0"
-MAX_HISTORY_TURNS = 10      # Max conversation turns kept in context (older turns dropped)
+MAX_HISTORY_TURNS = 5       # Max conversation turns kept in context (older turns dropped)
 MAX_USER_MESSAGE_CHARS = 2000
 MAX_CONTEXT_CHARS = 3000    # Analysis context truncated beyond this to cap token usage
 

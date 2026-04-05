@@ -1,7 +1,7 @@
 
 ---
 title: Finance Intelligence System
-emoji: "📊"
+emoji: 📊
 colorFrom: blue
 colorTo: green
 sdk: streamlit
@@ -11,9 +11,14 @@ pinned: true
 
 # Finance Intelligence System
 
-A production-grade personal finance assistant that combines a **deterministic statistical analysis pipeline** with **GPT-powered natural language guidance**, underpinned by a **responsible-AI governance layer**.
+[![CI](https://github.com/cliffordnwanna/GPT-POWERED-FINANCE-CHATBOT/actions/workflows/ci.yml/badge.svg)](https://github.com/cliffordnwanna/GPT-POWERED-FINANCE-CHATBOT/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://huggingface.co/spaces/cliffordnwanna/finance-intelligence)
 
-Upload a bank transaction CSV and get instant category breakdowns, spending trends, and actionable AI-generated advice. All grounded in your actual numbers, never invented.
+> Upload a bank CSV and get instant spending breakdowns, trends, and GPT-powered advice — all grounded in your actual numbers, never invented.
+
+A production-grade personal finance assistant that combines a **deterministic statistical analysis pipeline** with **GPT-powered natural language guidance**, underpinned by a **responsible-AI governance layer**.
 
 Built as a full-stack data science and AI engineering demonstration by [Clifford Nwanna](https://github.com/cliffordnwanna).
 
@@ -242,4 +247,4 @@ As the prototype grew, so did the vision. The notebook’s conversational patter
 - A strict separation between analysis and narration (LLM never invents numbers)
 - Full responsible AI governance, logging, and observability
 
-> *This journey—from a glowing notebook demo to a portfolio-ready, production system—proves that great products start with curiosity, iteration, and a relentless focus on user trust.*
+> *This journey from a notebook demo to a portfolio-ready, production system—proves that great products start with curiosity, iteration, and a relentless focus on user trust.*

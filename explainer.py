@@ -125,9 +125,9 @@ def format_for_prompt(insight: Dict[str, Any]) -> str:
 
     top_tx_lines = ""
     for t in insight.get("top_transactions", []):
-        top_tx_lines += f"\n  - {t.get('date','')} | {t.get('category','')} | {t.get('amount',0):,.2f}"
+        top_tx_lines += f"\n  - {t.get('date', '')} | {t.get('category', '')} | {t.get('amount', 0):,.2f}"
         if t.get("description"):
-            top_tx_lines += f" | {t.get('description','')}"
+            top_tx_lines += f" | {t.get('description', '')}"
 
     return f"""--- Financial Analysis Summary ---
 Period        : {insight['date_range']['start']} to {insight['date_range']['end']}

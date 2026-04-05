@@ -38,7 +38,7 @@ from typing import Dict, List
 
 _PRICING: Dict[str, Dict[str, float]] = {
     "gpt-4o-mini": {"prompt": 0.00015, "completion": 0.00060},
-    "gpt-4o":      {"prompt": 0.00250, "completion": 0.01000},
+    "gpt-4o": {"prompt": 0.00250, "completion": 0.01000},
     "gpt-4-turbo": {"prompt": 0.01000, "completion": 0.03000},
     "gpt-3.5-turbo": {"prompt": 0.00050, "completion": 0.00150},
 }
@@ -161,7 +161,8 @@ def get_summary(metrics: SessionMetrics) -> Dict:
 # ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
-    import sys as _sys, os as _os
+    import sys as _sys
+    import os as _os
     _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
 
     print("=== Metrics Module Tests ===\n")

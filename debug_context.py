@@ -1,4 +1,5 @@
-import sys, os
+import sys
+import os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from analysis import run_full_analysis, SAMPLE_DATA_PATH
 from explainer import build_insight, format_for_prompt
