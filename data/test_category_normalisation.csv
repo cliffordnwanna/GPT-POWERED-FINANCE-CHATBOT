@@ -1,0 +1,57 @@
+date,category,amount,description
+2026-01-02,groceries,42.50,Weekly grocery run — should map to "food"
+2026-01-03,transportation,18.00,Bus pass — should map to "transport"
+2026-01-04,streaming,12.99,Netflix — should map to "entertainment"
+2026-01-05,food,38.75,Supermarket
+2026-01-06,electric,55.00,Electric bill — should map to "utilities"
+2026-01-07,pharmacy,15.00,Pharmacy — should map to "health"
+2026-01-08,food,45.20,Large shop
+2026-01-09,taxi,14.50,Taxi — should map to "transport"
+2026-01-10,save,100.00,Monthly saving — should map to "savings"
+2026-01-11,FOOD,29.80,Uppercase — should normalise to "food"
+2026-01-12,  health  ,8.50,Vitamins with whitespace — should trim to "health"
+2026-01-13,train,22.00,Train ticket — should map to "transport"
+2026-01-14,restaurant,35.10,Dinner out — should map to "food"
+2026-01-15,dentist,180.00,Dentist appointment — should map to "health"
+2026-01-16,bills,48.00,Gas bill — should map to "utilities"
+2026-01-17,groceries,51.30,Supermarket
+2026-01-18,saving,100.00,Different spelling — should map to "savings"
+2026-01-19,gym,30.00,Gym membership — should map to "health"
+2026-01-20,bus,16.00,Bus fare — should map to "transport"
+2026-01-21,cinema,45.00,Cinema tickets — should map to "entertainment"
+2026-01-22,supermarket,40.00,Supermarket — should map to "food"
+2026-01-23,investment,200.00,ISA — should map to "savings"
+2026-01-24,utility,52.00,Water bill — should map to "utilities"
+2026-01-25,takeaway,36.00,Takeaway food — should map to "food"
+2026-01-26,flight,275.00,Weekend trip — anomaly spike in "transport"
+2026-01-27,savings,100.00,Standard form — stays as "savings"
+2026-01-28,dining,44.00,Dining out — should map to "food"
+2026-01-29,subscription,14.00,Magazine sub — should map to "entertainment"
+2026-01-30,chemist,12.00,Chemist — should map to "health"
+2026-01-31,fuel,60.00,Petrol — anomaly spike in "transport"
+2026-02-02,transport,18.00,Bus
+2026-02-04,food,38.00,Grocery
+2026-02-05,entertainment,22.00,Dinner out
+2026-02-06,savings,100.00,Monthly transfer
+2026-02-07,food,43.50,Supermarket
+2026-02-08,health,9.00,Pharmacy
+2026-02-09,transport,19.00,Train
+2026-02-10,food,37.00,Corner shop
+2026-02-11,utilities,54.00,Electric bill
+2026-02-12,entertainment,11.99,Streaming
+2026-02-13,food,46.00,Supermarket
+2026-02-14,transport,21.00,Taxi
+2026-02-15,savings,100.00,Monthly transfer
+2026-02-16,food,40.00,Supermarket
+2026-02-17,health,14.00,Dentist check
+2026-02-18,entertainment,8.00,Cinema
+2026-02-19,food,33.00,Grocery
+2026-02-20,transport,17.00,Bus
+2026-02-21,utilities,50.00,Gas bill
+2026-02-22,food,44.50,Supermarket
+2026-02-23,savings,100.00,Monthly transfer
+2026-02-24,health,11.00,Vitamins
+2026-02-25,transport,16.50,Train
+2026-02-26,food,38.50,Supermarket
+2026-02-27,entertainment,30.00,Theatre
+2026-02-28,food,42.00,Grocery

@@ -1,0 +1,39 @@
+# Secrets — never commit these
+.env
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Build artifacts
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Logs — generated at runtime
+logs/
+*.log
+
+# Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Streamlit secrets — never commit
+.streamlit/secrets.toml

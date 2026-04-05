@@ -1,0 +1,104 @@
+# .github/workflows/ci.yml
+#
+# Continuous Integration for the GPT-Powered Finance Chatbot.
+#
+# This workflow runs on every push to main and on every pull request targeting
+# main. It performs three checks in order:
+#
+#   1. Install dependencies       — ensures all packages are resolvable
+#   2. Lint with flake8           — enforces code style (errors only, no warnings)
+#   3. Test with pytest           — runs the full unit test suite
+#
+# The OPENAI_API_KEY is set to a dummy value so config.validate() passes
+# without requiring a real key in CI. No live API calls are made — all
+# external I/O is mocked in the test suite.
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: Lint and Test (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+
+    steps:
+      # ------------------------------------------------------------------ #
+      # 1. Checkout source
+      # ------------------------------------------------------------------ #
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ------------------------------------------------------------------ #
+      # 2. Set up Python
+      # ------------------------------------------------------------------ #
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: "pip"
+
+      # ------------------------------------------------------------------ #
+      # 3. Install dependencies
+      # ------------------------------------------------------------------ #
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements-dev.txt
+
+      # ------------------------------------------------------------------ #
+      # 4. Lint – errors only (E and F codes)
+      #    W (warnings) and C (complexity) are excluded to avoid style churn.
+      #    E501 (line-too-long) is also excluded for readability in docstrings.
+      # ------------------------------------------------------------------ #
+      - name: Lint with flake8
+        run: |
+          flake8 . \
+            --count \
+            --select=E,F \
+            --extend-ignore=E501,E402 \
+            --exclude=.git,__pycache__,data,logs,.env \
+            --show-source \
+            --statistics
+
+      # ------------------------------------------------------------------ #
+      # 5. Run unit tests with coverage
+      # ------------------------------------------------------------------ #
+      - name: Run tests with pytest
+        env:
+          OPENAI_API_KEY: "ci-test-key-not-real"
+          USE_AZURE: "false"
+          MODEL_NAME: "gpt-4o-mini"
+          MAX_TOKENS: "500"
+          MAX_HISTORY_TURNS: "10"
+          MAX_INPUT_LENGTH: "500"
+          MAX_REQUESTS_PER_SESSION: "20"
+          LOG_LEVEL: "ERROR"
+        run: |
+          python -m pip install pytest pytest-cov
+          pytest tests/ \
+            --tb=short \
+            --cov=. \
+            --cov-report=term-missing \
+            --cov-omit="tests/*,data/*,*/__pycache__/*" \
+            -v
+
+      # ------------------------------------------------------------------ #
+      # 6. Upload coverage report as an artefact (optional, non-blocking)
+      # ------------------------------------------------------------------ #
+      - name: Upload coverage report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report-py${{ matrix.python-version }}
+          path: .coverage
+          retention-days: 7

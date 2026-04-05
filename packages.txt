@@ -1,0 +1,3 @@
+# packages.txt — system-level packages for Hugging Face Spaces (apt-get).
+# This app has no system-level dependencies beyond what the base image provides.
+# Leave this file empty; remove it only if HF Spaces build fails on it.

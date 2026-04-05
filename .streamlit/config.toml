@@ -1,0 +1,23 @@
+# .streamlit/config.toml — Streamlit production configuration.
+# These settings optimise the app for deployment behind a reverse proxy.
+# No changes required for local development.
+
+[server]
+headless = true              # Disable the "Please wait..." dialog in production
+port = 8501
+enableCORS = false           # CORS handled at the reverse proxy layer
+enableXsrfProtection = true  # Enable XSRF protection
+maxUploadSize = 5            # Maximum upload size in MB (enforced by Streamlit server)
+
+[browser]
+gatherUsageStats = false     # Opt out of telemetry
+
+[theme]
+primaryColor    = "#1f77b4"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f5f7fa"
+textColor       = "#1a1a1a"
+font            = "sans serif"
+
+[logger]
+level = "warning"            # Suppress Streamlit's verbose INFO logs in production
