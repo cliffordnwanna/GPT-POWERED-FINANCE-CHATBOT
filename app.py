@@ -375,7 +375,7 @@ def _render_analyser_tab() -> None:
                 texttemplate="",
                 hovertemplate="%{y}<br>$%{x:,.2f}<extra></extra>",
             )
-            st.plotly_chart(fig_bar, width='stretch')
+            st.plotly_chart(fig_bar, use_container_width=True)
 
         with right:
             st.subheader("Spending Share")
@@ -404,7 +404,7 @@ def _render_analyser_tab() -> None:
                 margin=dict(l=10, r=120, t=20, b=20),
                 paper_bgcolor="rgba(0,0,0,0)",
             )
-            st.plotly_chart(fig_donut, width='stretch')
+            st.plotly_chart(fig_donut, use_container_width=True)
 
         # --- Time series trend ---
         st.subheader("Daily Spending Trend")
@@ -440,7 +440,7 @@ def _render_analyser_tab() -> None:
         )
         fig_line.update_xaxes(tickangle=0, showgrid=False)
         fig_line.update_yaxes(showgrid=True, gridcolor="#f0f0f0", tickformat="$,.0f")
-        st.plotly_chart(fig_line, width='stretch')
+        st.plotly_chart(fig_line, use_container_width=True)
 
         # --- Top Categories ---
         st.subheader("Top 3 Categories")
@@ -452,7 +452,7 @@ def _render_analyser_tab() -> None:
                 {"Category": cat.capitalize(), "Total Spend": f"${amt:,.2f}", "% of Total": f"{by_cat_pct.get(cat, 0):.1f}%"}
                 for cat, amt in top3
             ])
-            st.dataframe(top3_df, hide_index=True, width='stretch')
+            st.dataframe(top3_df, hide_index=True, use_container_width=True)
             st.caption("Your three highest-spend categories for the period.")
 
         # --- Download report ---
