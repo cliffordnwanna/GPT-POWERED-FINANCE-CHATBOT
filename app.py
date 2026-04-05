@@ -157,7 +157,9 @@ st.markdown(
     }
     /* Clean chart containers */
     .stPlotlyChart {border-radius: 8px; overflow: hidden;}
-    [data-testid="collapsedControl"] {display: flex !important;}
+    [data-testid="collapsedControl"] {display: flex !important; opacity: 1 !important; visibility: visible !important; transition: none !important;}
+    [data-testid="collapsedControl"] button {opacity: 1 !important; visibility: visible !important; transition: none !important; background: rgba(255,255,255,0.9) !important;}
+    [data-testid="collapsedControl"] button svg {opacity: 1 !important;}
     </style>
     """,
     unsafe_allow_html=True,
