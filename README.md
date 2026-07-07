@@ -13,15 +13,21 @@ pinned: true
 # Finance Intelligence System
 
 [![CI](https://github.com/cliffordnwanna/GPT-POWERED-FINANCE-CHATBOT/actions/workflows/ci.yml/badge.svg)](https://github.com/cliffordnwanna/GPT-POWERED-FINANCE-CHATBOT/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://huggingface.co/spaces/cliffordnwanna/finance-intelligence)
+[![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.40-red.svg)](https://streamlit.io/)
+[![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o--mini-412991.svg)](https://openai.com/)
+[![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458.svg)](https://pandas.pydata.org/)
+[![Plotly](https://img.shields.io/badge/Plotly-Interactive%20Charts-3F4F75.svg)](https://plotly.com/)
 
-> Upload a bank CSV and get instant spending breakdowns, trends, and GPT-powered advice — all grounded in your actual numbers, never invented.
+> An AI-powered financial intelligence platform that transforms transaction data into meaningful insights.
 
-A production-grade personal finance assistant that combines a **deterministic statistical analysis pipeline** with **GPT-powered natural language guidance**, underpinned by a **responsible-AI governance layer**.
+Finance Intelligence System is an AI-powered analytics platform that combines deterministic financial analysis with natural language intelligence to help users better understand their spending habits.
 
-Built as a full-stack data science and AI engineering demonstration by [Clifford Nwanna](https://github.com/cliffordnwanna).
+Instead of simply visualising transactions, the platform validates financial data, performs statistical analysis, identifies spending patterns, detects unusual behaviour and uses GPT to explain the results in clear, human language.
+
+The language model never performs calculations. All financial analysis is generated through deterministic Python pipelines before being narrated by AI, ensuring the results remain transparent, explainable and trustworthy.
+
+**Live Demo:** https://huggingface.co/spaces/cliffordnwanna/finance-intelligence
 
 ---
 
@@ -59,7 +65,7 @@ streamlit run app.py
 
 ---
 
-## What It Does
+## Core Capabilities
 
 | Layer | What happens |
 |-------|-------------|
@@ -72,7 +78,7 @@ streamlit run app.py
 
 ---
 
-## Architecture
+## System Architecture
 
 ```
 CSV Upload
@@ -98,7 +104,7 @@ explainer.py ── structured insight object
 
 ---
 
-## Tech Stack
+## Technology Stack
 
 | Component | Technology |
 |-----------|------------|
@@ -110,6 +116,28 @@ explainer.py ── structured insight object
 | Configuration | python-dotenv (12-Factor App pattern) |
 | Logging | Python logging — JSON-structured dual output |
 | Deployment | Hugging Face Spaces (Streamlit SDK) |
+
+---
+
+## Engineering Principles
+
+The platform was designed around four core principles.
+
+### Deterministic Analysis
+
+Financial calculations should always be reproducible and explainable. Every statistic is generated through Python rather than the language model.
+
+### AI as an Interpreter
+
+GPT is responsible for explaining analytical results, not generating them. This separation reduces hallucinations while improving transparency.
+
+### Responsible AI
+
+Every AI response passes through validation, governance and safety controls before reaching the user.
+
+### Graceful Degradation
+
+The statistical pipeline continues to operate even when the language model is unavailable, ensuring users always receive accurate analytical results.
 
 ---
 
@@ -193,7 +221,7 @@ Every uploaded file passes through a 13-point validation pipeline before any ana
 
 ---
 
-## Key Design Decisions
+## Engineering Decisions
 
 **Why separate the statistical pipeline from the LLM?**
 Deterministic analysis is independently testable and auditable. The LLM is used only to narrate the findings in plain English. This satisfies explainability requirements, enables graceful degradation if the API is unavailable, and prevents the model from hallucinating financial figures.
@@ -220,6 +248,18 @@ Aggregated category totals answer the question users actually have: *"Where is m
 - Append-only audit log of every LLM interaction (session ID, tokens, latency)
 - Graceful degradation when the LLM is unavailable — analysis still renders
 - System prompt prohibits requesting or storing PII
+
+---
+
+## Lessons Learned
+
+Building Finance Intelligence reinforced an important engineering principle:
+
+Large language models should not replace deterministic software—they should complement it.
+
+By separating statistical computation from natural language generation, the system remains transparent, auditable and resilient while still providing users with conversational explanations of complex financial data.
+
+This architecture has since influenced how I design AI systems across other projects, prioritising explainability, modularity and responsible AI over model-centric implementations.
 
 ---
 
